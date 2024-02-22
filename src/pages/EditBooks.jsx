@@ -17,7 +17,7 @@ const EditBooks = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://books-backend-qq0e.onrender.com/${id}`)
+      .get(`https://books-backend-qq0e.onrender.com/books/${id}`)
       .then((res) => {
         setTitle(res.data.data.title);
         setAuthor(res.data.data.author);
@@ -38,7 +38,7 @@ const EditBooks = () => {
     };
     setLoading(false);
     axios
-      .put(`https://books-backend-qq0e.onrender.com/${id}`, data)
+      .put(`https://books-backend-qq0e.onrender.com/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book updated successfully", { variant: "success" });
